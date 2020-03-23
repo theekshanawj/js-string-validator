@@ -28,7 +28,7 @@ Following methods can be linked to validate a given string
 
 | Method | Definition |Usage | Example |
 |---|---|---|---|
-|constructor| `new StringValidator(value) ; value: string \| falsy` | Initialize the validator with value to be validated. | `new StringValidator()`|
+|constructor| `new StringValidator(value) ; value: string \| falsy` | Initialize the validator with `value` to be validated. | `new StringValidator()`|
 | length | `length(number) ; number : any` | Validate the length of the string. Validaton is skipped if `number` not 0 or +. |  `validator.length(1).validate()`|
 | max | `max(number) ; number : any` | Validate the max length of the string. Validation is skipped if `number` is not 0 or +. | `validator.max(10).validate()`|
 | min | `min(number) ; number : any` | Validate the min length of the string. Validation is skipped if `number` is not 0 or +. | `validator.min(0).validate()`|
