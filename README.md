@@ -2,7 +2,7 @@
 JavaScript String validator util class.
 Based on the builder pattern, this class will all you to validate the given string for user defined criteria.
 
-## How to use this 
+## How to use
 ```
 const StringValidator = require(<path to StringValidator class>);
   
