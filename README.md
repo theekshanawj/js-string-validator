@@ -37,6 +37,8 @@ Following methods can be linked to validate a given string
 | allow | `allow(allowedValue) ; allowedValue: any` | Validate `true` if contructed with `allowedValue`| `validator.allow(undefined).validate()`|
 | validate | `validate()` | Validate the given string with given criteria | `validator.max(10).min(0).validate()`|
 
+Note: `value` for constructor can be a `string` or any JS `falsy` values.
+
 ## Tests 
 
 See the `string-validator-test.js` file for tests.
