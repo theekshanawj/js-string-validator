@@ -1,3 +1,7 @@
+/**
+ * String Validator class 
+ * Author: Theekshana Wijesinghe
+ */
 class StringValidator {
 	constructor(value) {
 		if (value && typeof value !== 'string') throw new Error('Invalid string type');
