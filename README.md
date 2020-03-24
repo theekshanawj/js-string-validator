@@ -1,9 +1,10 @@
 # js-string-validator
-JavaScript String validator util class.
+JavaScript String validator utility class.
 Based on the builder pattern, this class will all you to validate the given string for user defined criteria.
 
 ## Add to your application 
 
+Get the package from [here](https://www.npmjs.com/package/js-string-validator)
 ```
 npm i js-string-validator
 ```
