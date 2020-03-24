@@ -2,9 +2,15 @@
 JavaScript String validator util class.
 Based on the builder pattern, this class will all you to validate the given string for user defined criteria.
 
+## Add to your application 
+
+```
+npm i js-string-validator
+```
+
 ## How to use
 ```
-const StringValidator = require(<path to StringValidator class>);
+const StringValidator = require('js-string-validator');
   
 let validator = new StringValidator('some string');
 
@@ -41,4 +47,5 @@ Note: `value` for constructor can be a `string` or any JS `falsy` values.
 
 ## Tests 
 
-See the `string-validator-test.js` file for tests.
+`npm run test`
+

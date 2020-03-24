@@ -1,6 +1,7 @@
 const assert = require('assert').strict;
 
-const StringValidator = require('./string-validator');
+const StringValidator = require('./index');
+
 
 // Some basic test -------------------------------------------------------------
 
@@ -159,3 +160,9 @@ assert(isValid, 'should validate true if undefined is allowed given constructor 
 stringValidator = new StringValidator(null);
 isValid = stringValidator.max(10).allow(null).validate();
 assert(isValid, 'should validate true if null is allowed given constructor invoked with null');
+
+const validator2 = new StringValidator('some string');
+
+const isValidString = validator2.min(0).max(20).regex(/\s+/).includes('string').validate();
+
+console.log('Successfully passed all tests');
