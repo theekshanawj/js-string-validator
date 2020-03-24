@@ -1,0 +1,24 @@
+{
+  "name": "js-string-validator",
+  "version": "1.0.0",
+  "description": "JS String validator utility class",
+  "main": "index.js",
+  "scripts": {
+    "test": "node string-validator-test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theekshanawj/js-string-validator.git"
+  },
+  "keywords": [
+    "JS",
+    "String",
+    "Validator"
+  ],
+  "author": "Theekshana Wijesinghe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/theekshanawj/js-string-validator/issues"
+  },
+  "homepage": "https://github.com/theekshanawj/js-string-validator#readme"
+}
