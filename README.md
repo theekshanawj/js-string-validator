@@ -1,4 +1,7 @@
 # js-string-validator
+
+![Script Validator](https://github.com/theekshanawj/js-string-validator/workflows/Script%20Validator/badge.svg?branch=master&event=push)
+
 JavaScript String validator utility class.
 Based on the builder pattern, this class will all you to validate the given string for user defined criteria.
 
