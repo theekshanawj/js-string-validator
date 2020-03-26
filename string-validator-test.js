@@ -34,7 +34,7 @@ assert(!anIValidCase, 'should assert false since constructor called with undefin
 
 const anotherValidCase = validator
 							.length(3)
-							.allow(null)
+							.allow(undefined)
 							.min(2)
 							.max(5)
 							.regex(/\d+/)
@@ -42,7 +42,7 @@ const anotherValidCase = validator
 							.validate();
 
 
-assert(anotherValidCase, 'should assert true since null is allowed');
+assert(anotherValidCase, 'should assert true since undefined is allowed');
 
 
 validator = new StringValidator('b');
@@ -156,11 +156,16 @@ assert(!isValid, 'should validate false if includes method is called with a inva
 
 // allow method
 stringValidator = new StringValidator();
-isValid = stringValidator.allow(null).validate();
-assert(isValid, 'should validate true if null is allowed given constructor invoked with undefined');
+isValid = stringValidator.allow(undefined).validate();
+assert(isValid, 'should validate true if undefined is allowed given constructor invoked with undefined');
 
 stringValidator = new StringValidator(null);
 isValid = stringValidator.max(10).allow(null).validate();
 assert(isValid, 'should validate true if null is allowed given constructor invoked with null');
+
+stringValidator = new StringValidator('');
+isValid = stringValidator.max(10).allow('').validate();
+assert(isValid, 'should validate true if given constructor invoked with empty string');
+
 
 console.log('Successfully passed all tests');
