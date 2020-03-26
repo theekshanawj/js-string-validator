@@ -34,7 +34,7 @@ assert(!anIValidCase, 'should assert false since constructor called with undefin
 
 const anotherValidCase = validator
 							.length(3)
-							.allow(undefined)
+							.allow(null)
 							.min(2)
 							.max(5)
 							.regex(/\d+/)
@@ -42,7 +42,7 @@ const anotherValidCase = validator
 							.validate();
 
 
-assert(anotherValidCase, 'should assert true since undefined is allowed');
+assert(anotherValidCase, 'should assert true since null is allowed');
 
 
 validator = new StringValidator('b');
@@ -70,16 +70,18 @@ assert(err, 'should throw an error when called with non-string parameter');
 
 stringValidator = new StringValidator('some string');
 isValid = stringValidator.validate();
-assert(isValid, 'should validate true if constructor invoked with a valid');
+assert(isValid, 'should validate true if constructor invoked with a valid sting');
 
 stringValidator = new StringValidator();
 isValid = stringValidator.validate();
-assert(!isValid, 'should validate false if constructor invoked with falsy value');
+assert(!isValid, 'should validate false if constructor invoked with empty string');
 
-stringValidator = new StringValidator(0);
-isValid = stringValidator.validate();
-assert(!isValid, 'should validate false if constructor invoked with falsy value');
-
+try {
+	stringValidator = new StringValidator(0);
+} catch(e) {
+	err = e;
+}
+assert(err, 'should throw an error if constructor invoked with falsy value such as 0');
 
 // length method tests
 stringValidator = new StringValidator('abc');
@@ -154,8 +156,8 @@ assert(!isValid, 'should validate false if includes method is called with a inva
 
 // allow method
 stringValidator = new StringValidator();
-isValid = stringValidator.allow(undefined).validate();
-assert(isValid, 'should validate true if undefined is allowed given constructor invoked with undefined');
+isValid = stringValidator.allow(null).validate();
+assert(isValid, 'should validate true if null is allowed given constructor invoked with undefined');
 
 stringValidator = new StringValidator(null);
 isValid = stringValidator.max(10).allow(null).validate();
