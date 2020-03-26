@@ -4,11 +4,11 @@
  */
 class StringValidator {
 	constructor(value) {
-		if (value !== null && value !== undefined && typeof value !== 'string') throw new Error('Invalid string type');
 		this.isNullOrUndefined = false;
 		if (value === null || value === undefined) {
 			this.isNullOrUndefined = true;
 		}
+		if (this.isNullOrUndefined === false && typeof value !== 'string') throw new Error('Invalid string type');
 		this.value = value;
 		this.isValid = !!value;
 	}
