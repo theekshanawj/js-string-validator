@@ -76,6 +76,10 @@ stringValidator = new StringValidator();
 isValid = stringValidator.validate();
 assert(!isValid, 'should validate false if constructor invoked with empty string');
 
+stringValidator = new StringValidator('');
+isValid = stringValidator.allow('').validate();
+assert(isValid, 'should validate true if empty string is allowed and given constructor invoked with empty string');
+
 try {
 	stringValidator = new StringValidator(0);
 } catch(e) {
@@ -162,10 +166,5 @@ assert(isValid, 'should validate true if undefined is allowed given constructor 
 stringValidator = new StringValidator(null);
 isValid = stringValidator.max(10).allow(null).validate();
 assert(isValid, 'should validate true if null is allowed given constructor invoked with null');
-
-stringValidator = new StringValidator('');
-isValid = stringValidator.max(10).allow('').validate();
-assert(isValid, 'should validate true if given constructor invoked with empty string');
-
 
 console.log('Successfully passed all tests');
