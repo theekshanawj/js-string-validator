@@ -70,16 +70,22 @@ assert(err, 'should throw an error when called with non-string parameter');
 
 stringValidator = new StringValidator('some string');
 isValid = stringValidator.validate();
-assert(isValid, 'should validate true if constructor invoked with a valid');
+assert(isValid, 'should validate true if constructor invoked with a valid sting');
 
 stringValidator = new StringValidator();
 isValid = stringValidator.validate();
-assert(!isValid, 'should validate false if constructor invoked with falsy value');
+assert(!isValid, 'should validate false if constructor invoked with empty string');
 
-stringValidator = new StringValidator(0);
-isValid = stringValidator.validate();
-assert(!isValid, 'should validate false if constructor invoked with falsy value');
+stringValidator = new StringValidator('');
+isValid = stringValidator.allow('').validate();
+assert(isValid, 'should validate true if empty string is allowed and given constructor invoked with empty string');
 
+try {
+	stringValidator = new StringValidator(0);
+} catch(e) {
+	err = e;
+}
+assert(err, 'should throw an error if constructor invoked with falsy value such as 0');
 
 // length method tests
 stringValidator = new StringValidator('abc');
