@@ -74,11 +74,11 @@ assert(isValid, 'should validate true if constructor invoked with a valid sting'
 
 stringValidator = new StringValidator();
 isValid = stringValidator.validate();
-assert(!isValid, 'should validate false if constructor invoked with empty string');
+assert(!isValid, 'should validate false if constructor invoked without any params');
 
 stringValidator = new StringValidator('');
-isValid = stringValidator.allow('').validate();
-assert(isValid, 'should validate true if empty string is allowed and given constructor invoked with empty string');
+isValid = stringValidator.validate();
+assert(isValid, 'should validate true if the constructor invoked with empty string ""');
 
 try {
 	stringValidator = new StringValidator(0);

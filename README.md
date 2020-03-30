@@ -38,16 +38,15 @@ Following methods can be linked to validate a given string
 
 | Method | Definition |Usage | Example |
 |---|---|---|---|
-|constructor| `new StringValidator(value) ; value: string \| falsy` | Initialize the validator with `value` to be validated. | `new StringValidator()`|
-| length | `length(number) ; number : any` | Validate the length of the string. Validaton is skipped if `number` not 0 or +. |  `validator.length(1).validate()`|
+|constructor| `new StringValidator(value) ; value: string \| null \| undefined` | Initialize the validator with `value` to be validated. | `new StringValidator()`|
+| length | `length(number) ; number : any` | Validate the length of the string. Validation is skipped if `number` not 0 or +. |  `validator.length(1).validate()`|
 | max | `max(number) ; number : any` | Validate the max length of the string. Validation is skipped if `number` is not 0 or +. | `validator.max(10).validate()`|
 | min | `min(number) ; number : any` | Validate the min length of the string. Validation is skipped if `number` is not 0 or +. | `validator.min(0).validate()`|
-| regex | `regext(regexPattern) ; regexPattern : any` | Validate for the string for given `regexPattern`. Validation is skipped if the pattern is not a regex | `validator.regex(/[0-9a-zA-Z]+/).validate()`|
-| includes | `includes(subString) ; subString: any` |  Validate if `subString` includes in the string. Validatin is skipped if the `subString` is undefined | `validator.includes('test').validate()`|
-| allow | `allow(allowedValue) ; allowedValue: any` | Validate `true` if contructed with `allowedValue`| `validator.allow(undefined).validate()`|
+| regex | `regex(regexPattern) ; regexPattern : any` | Validate for the string for given `regexPattern`. Validation is skipped if the pattern is not a regex | `validator.regex(/[0-9a-zA-Z]+/).validate()`|
+| includes | `includes(subString) ; subString: any` |  Validate if `subString` includes in the string. Validation is skipped if the `subString` is undefined | `validator.includes('test').validate()`|
+| allow | `allow(allowedValue) ; allowedValue: any` | Validate `true` if constructed with `allowedValue`| `validator.allow(undefined).validate()`|
 | validate | `validate()` | Validate the given string with given criteria | `validator.max(10).min(0).validate()`|
 
-Note: `value` for constructor can be a `string` or any JS `falsy` values.
 
 ## Tests 
 
