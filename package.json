@@ -4,7 +4,7 @@
   "description": "JS String validator utility class",
   "main": "index.js",
   "scripts": {
-    "test": "node string-validator-test.js"
+    "test": "node string-validator-tests.js"
   },
   "repository": {
     "type": "git",
