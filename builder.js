@@ -1,5 +1,5 @@
 /**
- * String validator builder class
+ * String validator builder function
  * Allow to build a template for string validations
  *
  * Author: Theekshana Wijesinghe
@@ -8,7 +8,7 @@
 const StringValidator = require('./');
 
 // These are the public methods exposed by StringValidator class
-const stringValidatorExposedMethod = ['length', 'max', 'min', 'regex', 'includes', 'allow'];
+const stringValidatorExposedMethods = ['length', 'max', 'min', 'regex', 'includes', 'allow'];
 
 /**
  * Functional wrapper that expose String validator methods
@@ -24,7 +24,7 @@ const stringValidatorWrapper = () => {
     // Expose all the methods
     // When a method is called save the params
     // Return exposed object to allow chaining
-    stringValidatorExposedMethod.forEach((method) => {
+    stringValidatorExposedMethods.forEach((method) => {
        exposed[method] = (param) => {
            methodTracker[method] = param;
            return exposed;
