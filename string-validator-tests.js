@@ -55,7 +55,7 @@ const anotherInvalidCase = validator
 
 assert(!anotherInvalidCase, 'should assert false since given string has a length');
 
-// builder test ---------------------------------------------------------------------------------------
+// String Validator method test ---------------------------------------------------------------------------------------
 
 let stringValidator;
 let err;
@@ -167,4 +167,4 @@ stringValidator = new StringValidator(null);
 isValid = stringValidator.max(10).allow(null).validate();
 assert(isValid, 'should validate true if null is allowed given constructor invoked with null');
 
-console.log('Successfully passed all tests');
+console.log('Successfully passed all String Validator tests');
