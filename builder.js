@@ -7,8 +7,21 @@
 
 const StringValidator = require('./');
 
-// These are the public methods exposed by StringValidator class
-const stringValidatorExposedMethods = ['length', 'max', 'min', 'regex', 'includes', 'allow'];
+
+// Capture all the public methods exposed by StringValidator class
+const stringValidatorExposedMethods = [];
+
+// These methods of StringValidator will not be exposed
+const stringValidatorBlackListedMethod = ['constructor'];
+
+// IIFY: Get exposed methods by excluding black listed methods
+(() => {
+    Object.getOwnPropertyNames(StringValidator.prototype).forEach((method) => {
+        if (!stringValidatorBlackListedMethod.includes(method)) {
+            stringValidatorExposedMethods.push(method);
+        }
+    })
+})();
 
 /**
  * Functional wrapper that expose String validator methods
