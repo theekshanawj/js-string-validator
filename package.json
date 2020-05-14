@@ -1,10 +1,10 @@
 {
   "name": "js-string-validator",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "JS String validator utility class",
   "main": "index.js",
   "scripts": {
-    "test": "node string-validator-tests.js"
+    "test": "node string-validator-tests.js && node string-validator-builder-tests.js"
   },
   "repository": {
     "type": "git",
