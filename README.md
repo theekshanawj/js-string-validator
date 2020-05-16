@@ -36,6 +36,8 @@ console.log(validator.validate());
 
 - ### Builder 
 
+Create a template (validator function) for re-usability
+
 ```javascript
 const StringValidatorBuilder = require('js-string-validator/builder');
   
