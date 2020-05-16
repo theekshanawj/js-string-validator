@@ -13,6 +13,8 @@ npm i js-string-validator
 ```
 
 ## How to use
+
+- ### Basic usage
 ```
 const StringValidator = require('js-string-validator');
   
@@ -30,9 +32,31 @@ validator = new StringValidator();
 
 console.log(validator.validate());
 // false -> Not a valid string
-
 ```
+
+- ### Builder 
+
+Create a template (validator function) for re-usability
+
+```javascript
+const StringValidatorBuilder = require('js-string-validator/builder');
+  
+const validator = StringValidatorBuilder().min(0).max(20).regex(/\s+/).includes('string').build();
+
+console.log(validator('some string'));
+// true  -> string obeys the pattern
+
+console.log(validator('random'));
+// false -> string violates the pattern
+
+console.log(validator());
+// false -> undefined not allowed
+```
+
+
 ## API specification
+
+- ### Basic usage
 
 Following methods can be linked to validate a given string
 
@@ -47,8 +71,15 @@ Following methods can be linked to validate a given string
 | allow | `allow(allowedValue) ; allowedValue: any` | Validate `true` if constructed with `allowedValue`| `validator.allow(undefined).validate()`|
 | validate | `validate()` | Validate the given string with given criteria | `validator.max(10).min(0).validate()`|
 
+- ### Builder
 
-## Tests 
+Builder API will allow creation of a template for String validation.
 
-`npm run test`
+`length, max, regex, includes, allow` can be used to build a template (combine these methods in any form suits).
+
+Use `build()` to generate a validator function.
+
+```javascript
+StringValidatorBuilder().length(number).max(number).min(number).regex(regexPattern).includes(subString).allow(allowedValue).build();
+```
 
