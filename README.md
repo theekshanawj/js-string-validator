@@ -73,7 +73,7 @@ Following methods can be linked to validate a given string
 
 - ### Builder
 
-Builder API will allow a create a template for String validation.
+Builder API will allow creation of a template for String validation.
 
 `length, max, regex, includes, allow` can be used to build a template (combine these methods in any form suits).
 
